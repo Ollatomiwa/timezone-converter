@@ -1,13 +1,41 @@
 <template>
-    <main class="container mx-auto p-4">
-      <h1 class="text-4xl font-bold mb-6">Timezone Converter</h1>
-      <section class="prose mb-8">
-        <h2>Understanding Time Zones</h2>
-        <p>Time zones are regions of the Earth that have the same standard time...</p>
-        <!-- Add more educational content -->
+     <div>
+    <main>
+      <section class="bg-[#80361B]">
+        <div
+          class="container flex flex-col lg:flex-row items-center lg:py-20 py-10 gap-10"
+        >
+          <div
+            class="flex-1 sm:order-1 lg:order-1 text-center lg:text-left lg:ml-10 md:mr-6"
+          >
+            <h1
+              class="text-2xl lg:text-8xl font-extrabold mb-6 text-white"
+              ref="herotext"
+            >
+            <span class="text-orange-400">TIMEZONE </span>
+              <span class="text-dodgeroll-gold">CONVERTER</span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 text-white" ref="subtext">
+              FIX TEAM MEETINGS WITH MEMBERS ON DIFFERENT TIME ZONES ON APPROPRIATE TIME FOR ALL...
+            </p>
+            <a
+              href="/converter"
+              class="bg-orange-400 text-white px-6 py-3 rounded-full font-semibold hover:bg-dodgeroll-gold transition duration-900 inline-block"
+            >
+              GET STARTED
+            </a>
+          </div>
+          <div class="flex-1 order-2 lg:order-2">
+            <NuxtImg
+              sizes="xs:100vw sm:900px"
+              src="hero-brown2.png"
+              format="webp"
+              alt="Hero Page"
+              densities="x1"
+            ></NuxtImg>
+          </div>
+        </div>
       </section>
-      <NuxtLink to="/converter" class="btn btn-[#f6f6f6]">
-        Get Started
-      </NuxtLink>
     </main>
+  </div>
   </template>
