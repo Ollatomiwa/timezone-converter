@@ -2,10 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-01-01',  // Updated to valid compatibility date
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxt/image', '@nuxtjs/google-fonts' ],
   vite: {
     optimizeDeps: {
       include: ['date-fns-tz']
     }
-  }
+  },
+  googleFonts: {
+    families: {
+      Roboto: [300, 400, 500, 700, 900],
+    },
+  },
 })
