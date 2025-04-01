@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto p-4 sm:h-[420px]  lg:text-left sm:text-center ">
+  <div class="container mx-auto p-4  max-w-[100vw] overflow-x-hidden lg:text-left sm:text-center ">
     <!-- User Timezone Selection -->
     <div class="mb-8 ">
       <label class="block mb-2  font-bold text-2xl lg:pt-[50px] md:mt-[60px]">Your Timezone</label>
@@ -14,14 +14,14 @@
       <div
         v-for="(member, index) in teamMembers"
         :key="index"
-        class="flex gap-4 lg:mb-6 mb-2 lg:w-[580px] lg:h-[40px] md:h-[40px] lg:ml-[10px] md:ml-[200px]  "
+        class="flex gap-4 lg:mb-6 mb-2 lg:w-[380px] lg:h-[40px] md:h-[40px] lg:ml-[10px] md:ml-[200px]  "
       >
         <select v-model="member.timezone" class="select select-bordered flex-1">
           <option v-for="tz in timezones" :key="tz" :value="tz">
             {{ tz }}
           </option>
         </select>
-        <button @click="removeMember(index)" class="btn  rounded-lg w-[180px] h-[50px]  bg-red-600 text-white ">
+        <button @click="removeMember(index)" class="btn lg:text-xl text-[12px] font-semibold rounded-lg w-[180px] h-[30px]  bg-red-600 text-white ">
             Remove
         </button>
       </div>
@@ -53,7 +53,7 @@
 
     <!-- Meeting Time Selection -->
     <div class="mb-8">
-      <label class="block mb-2 font-bold text-2xl">Select Meeting Time (Your Timezone)</label>
+      <label class="block mb-2 font-bold text-xl">Select Meeting Time (Your Timezone)</label>
       <input
         type="datetime-local"
         v-model="meetingTime"
@@ -62,10 +62,10 @@
     </div>
 
     <!-- Results Display -->
-    <div v-if="meetingTime" class="bg-gray-600 p-4 rounded-lg max-w-[600px] min-w-[400px] lg:ml-[1px] md:ml-[110px]">
-      <h3 class="text-xl mb-4 text-white">SCHEDULED MEETING TIMES</h3>
+    <div v-if="meetingTime" class="bg-gray-600 p-4 rounded-lg lg:max-w-[50vw] min-w-[40px] lg:ml-[1px] md:ml-[90px]">
+      <h3 class="text-[12px] mb-4 text-white">SCHEDULED MEETING TIMES</h3>
       <div class="mb-4">
-        <pre class="bg-base-100 p-1 rounded text-white lg:text-[20px] text-[13px] ">{{
+        <pre class="bg-base-100 p-1 rounded text-white lg:text-[20px] text-[10px] ">{{
           messageContent
         }}</pre>
       </div>
