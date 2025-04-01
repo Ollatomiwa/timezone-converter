@@ -14,23 +14,41 @@
       <div
         v-for="(member, index) in teamMembers"
         :key="index"
-        class="flex gap-2 mb-2 w-[120px] lg:h-[40px] md:h-[40px] lg:ml-[10px] md:ml-[200px]  "
+        class="flex gap-4 lg:mb-6 mb-2 lg:w-[580px] lg:h-[40px] md:h-[40px] lg:ml-[10px] md:ml-[200px]  "
       >
         <select v-model="member.timezone" class="select select-bordered flex-1">
           <option v-for="tz in timezones" :key="tz" :value="tz">
             {{ tz }}
           </option>
         </select>
-        <button @click="removeMember(index)" class="btn btn-error">
-          Remove
+        <button @click="removeMember(index)" class="btn  rounded-lg w-[180px] h-[50px]  bg-red-600 text-white ">
+            Remove
         </button>
       </div>
       <button
         @click="addMember"
-        class="btn rounded-lg w-[180px] h-[50px]  bg-orange-500 text-white hover:bg-orange"
+        class="btn rounded-lg w-[180px] h-[50px]  bg-blue-600 text-white hover:bg-orange"
       >
         Add Team Member
       </button>
+    </div>
+
+    <!--Input field for meeting purpose/event-->
+    <div class="mb-8">
+      <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-[390px] md:ml-[200px] lg:ml-[1px]">
+          <input
+            type="text"
+            placeholder="event purpose"
+            class="flex-1 px-6 py-3 rounded-lg border border-base-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+            required
+          />
+          <button @click=""
+            type="submit"
+            class="btn btn-primary bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-gray-400 transition-colors"
+          >
+            Submit
+          </button>
+        </form>
     </div>
 
     <!-- Meeting Time Selection -->
@@ -44,16 +62,16 @@
     </div>
 
     <!-- Results Display -->
-    <div v-if="meetingTime" class="bg-gray-600 p-4 rounded-lg max-w-[600px] lg:ml-[1px] md:ml-[110px]">
-      <h3 class="text-xl mb-4 text-white">Meeting Times</h3>
+    <div v-if="meetingTime" class="bg-gray-600 p-4 rounded-lg max-w-[600px] min-w-[400px] lg:ml-[1px] md:ml-[110px]">
+      <h3 class="text-xl mb-4 text-white">SCHEDULED MEETING TIMES</h3>
       <div class="mb-4">
-        <pre class="bg-base-100 p-4 rounded text-white text-xl">{{
+        <pre class="bg-base-100 p-1 rounded text-white lg:text-[20px] text-[13px] ">{{
           messageContent
         }}</pre>
       </div>
-      <div class="flex gap-2">
-        <button @click="copyMessage" class="btn rounded-lg w-[120px] h-[50px]  bg-orange-500 text-white">Copy Message</button>
-        <button @click="shareMessage" class="btn rounded-lg w-[110px] h-[50px]  bg-orange-500 text-white">
+      <div class="flex justify-center gap-2">
+        <button @click="copyMessage" class="btn rounded-lg w-[120px] h-[50px]  bg-blue-600 text-white">Copy Message</button>
+        <button @click="shareMessage" class="btn rounded-lg w-[110px] h-[50px]  bg-blue-600 text-white">
           Share
         </button>
       </div>
@@ -93,7 +111,7 @@ const messageContent = computed(() => {
     `- ${userTimezone.value}: ${formatInTimeZone(
       date,
       userTimezone.value,
-      "yyyy-MM-dd HH:mm zzz"
+      "dd-MM-yyyy HH:mm zzz"
     )}`
   );
 
@@ -103,7 +121,7 @@ const messageContent = computed(() => {
         `- ${member.timezone}: ${formatInTimeZone(
           date,
           member.timezone,
-          "yyyy-MM-dd HH:mm zzz"
+          "dd-MM-yyyy HH:mm zzz"
         )}`
       );
     }
