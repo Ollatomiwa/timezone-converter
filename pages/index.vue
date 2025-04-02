@@ -23,7 +23,7 @@
               to="/converter"
               class="bg-orange-400 text-white px-6 py-3 rounded-full font-semibold hover:bg-dodgeroll-gold transition duration-900 inline-block"
             >
-              GET STARTED
+              GET STARTED <Icon name="material-symbols:arrow-circle-right" class="bg-white size-3" />
             </NuxtLink>
           </div>
           <div class="flex-1 order-2 lg:order-2 hidden lg:block">
