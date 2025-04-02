@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div class="container mx-auto p-4  max-w-[100vw] overflow-x-hidden lg:text-left sm:text-center ">
     <!-- User Timezone Selection -->
     <div class="mb-8 ">
@@ -21,12 +21,12 @@
             {{ tz }}
           </option>
         </select>
-        <button @click="removeMember(index)" class="btn lg:text-xl text-[12px] font-semibold rounded-lg w-[180px] h-[30px]  bg-red-600 text-white ">
-            Remove
+        <button @click="removeMember(index)" class="btn  w-[180px] h-[40px]  text-white ">
+            <Icon name="material-symbols:delete-forever-rounded" class="bg-red-600 size-8" />
         </button>
       </div>
       <button
-        @click="addMember"
+        @click="addMember"  
         class="btn rounded-lg w-[180px] h-[50px]  bg-blue-600 text-white hover:bg-orange"
       >
         Add Team Member
