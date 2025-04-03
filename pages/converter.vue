@@ -42,7 +42,7 @@
           v-model="eventPurpose"
           type="text"
           placeholder="Event purpose"
-          class="flex-1 px-6 py-3 rounded-lg border border-base-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          class="flex-1 px-6 py-3 rounded-lg text-black border border-base-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           required
         />
         <button
@@ -61,7 +61,7 @@
           v-model="locationPurpose"
           type="text"
           placeholder="Location"
-          class="flex-1 px-6 py-3 rounded-lg border border-base-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          class="flex-1 px-6 py-3 text-black rounded-lg border border-base-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
           required
         />
         <button
