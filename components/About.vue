@@ -2,7 +2,7 @@
     <section class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div class=" mx-auto ">
         <!-- Section Title -->
-        <h2 class="text-3xl lg:text-5xl font-bold text-center mb-8">
+        <h2 class="text-2xl lg:text-5xl font-bold text-center mb-8">
           About Timezone Converter
         </h2>
   

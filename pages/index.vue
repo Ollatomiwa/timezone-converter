@@ -11,9 +11,8 @@
               <span class="text-orange-400">TIMEZONE </span>
               <span class="text-dodgeroll-gold">CONVERTER</span>
             </h1>
-            <p class="text-[15px] lg:text-xl mb-5 text-white" ref="subtext">
-              FIX TEAM MEETINGS WITH MEMBERS ON DIFFERENT TIME ZONES ON
-              APPROPRIATE TIME FOR ALL
+            <p class="text-[19px] lg:text-xl mb-5 text-white" ref="subtext">
+              The End of 'What Time Works for You?' Instant Perfect Meeting Times for Global Teams
             </p>
             <NuxtLink
               to="/converter"
