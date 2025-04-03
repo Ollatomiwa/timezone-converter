@@ -1,5 +1,7 @@
 <template>
-  <div class="container mx-auto p-4 max-w-[100vw] overflow-x-hidden lg:text-left sm:text-center">
+  <div class="container mx-auto p-4 max-w-[100vw] overflow-x-hidden lg:flex lg:gap-8 lg:items-start">
+  <!-- Content Section -->
+  <div class="lg:text-left sm:text-center lg:w-1/2">
     <!-- User Timezone Selection -->
     <div class="mb-8">
       <label class="block mb-2 font-bold text-2xl lg:pt-[50px] md:mt-[60px]">Your Timezone</label>
@@ -75,6 +77,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Images Section -->
+  <div class="hidden lg:block lg:w-1/2 lg:sticky lg:top-4">
+    <div class=" gap-4">
+      <NuxtImg
+        sizes="xs:100vw sm:900px"
+        src="hero4.png"
+        format="webp"
+        alt="Hero Page"
+        class="w-full h-auto object-contain"
+      ></NuxtImg>
+    </div>
+  </div>
+</div>
 </template>
 
 <script setup>
