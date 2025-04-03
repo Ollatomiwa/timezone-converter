@@ -54,6 +54,25 @@
       </form>
     </div>
 
+    <!--Location for events-->
+    <div class="mb-8">
+      <form @submit.prevent="submitLocationPurpose" class="flex flex-col sm:flex-row gap-4 justify-center max-w-[390px] md:ml-[200px] lg:ml-[1px]">
+        <input
+          v-model="locationPurpose"
+          type="text"
+          placeholder="Location"
+          class="flex-1 px-6 py-3 rounded-lg border border-base-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          required
+        />
+        <button
+          type="submit"
+          class="btn btn-primary bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-gray-400 transition-colors"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
     <!-- Meeting Time Selection -->
     <div class="mb-8">
       <label class="block mb-2 font-bold text-xl">Select Meeting Time (Your Timezone)</label>
@@ -104,6 +123,7 @@ const userTimezone = ref(Intl.DateTimeFormat().resolvedOptions().timeZone);
 const teamMembers = ref([{ timezone: userTimezone.value }]);
 const meetingTime = ref("");
 const eventPurpose = ref("");
+const locationPurpose = ref("");
 
 const { copy: copyToClipboard } = useClipboard();
 
@@ -120,6 +140,10 @@ const submitEventPurpose = () => {
   // No additional action needed here as it's already reactive
 };
 
+const submitLocationPurpose = () => {
+
+}
+
 const messageContent = computed(() => {
   if (!meetingTime.value) return "";
 
@@ -130,6 +154,12 @@ const messageContent = computed(() => {
   if (eventPurpose.value) {
     lines.push(`Event: ${eventPurpose.value}`);
     lines.push(""); // Add empty line for spacing
+  }
+  //Add location purpose if it exists
+  if (locationPurpose.value) {
+    lines.push(`Location: ${locationPurpose.value }`);
+    lines.push("");
+  
   }
 
   lines.push(`Meeting Time:`);

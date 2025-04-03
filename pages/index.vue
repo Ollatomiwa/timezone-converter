@@ -1,7 +1,7 @@
 <template>
   <div>
     <main>
-      <section class="bg-[#80361B] py-[70px] text-center">
+      <section class="bg-[#000000c7] py-[70px] text-center">
         <div class="row justify-content-md-center">
           <div class="col col-md-8">
             <h1
@@ -28,7 +28,7 @@
           </div>
           <div class="flex mt-6 justify-center items-center gap-4  md:block">
             <NuxtImg
-              sizes="xs:100vw sm:900px"
+              sizes="xs:100vw sm:400px"
               src="hero3.png"
               format="webp"
               alt="Hero Page"
