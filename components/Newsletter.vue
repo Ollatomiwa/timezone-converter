@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-base-200 py-16 px-4 sm:px-6 lg:px-8">
+    <section class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
         <!-- Section Title -->
         <h2 class="text-3xl font-bold mb-4">

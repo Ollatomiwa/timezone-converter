@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-800">
+  <div class="bg-white dark:bg-[#000000c7]">
     <main>
       <section class="bg-[#000000c7] py-[70px] text-center">
         <div class="row justify-content-md-center">
@@ -45,8 +45,8 @@
         </div>
       </section>
     </main>
-    <About />
-    <hr />
-    <Newsletter />
   </div>
+  <About />
+  <hr />
+  <Newsletter />
 </template>
