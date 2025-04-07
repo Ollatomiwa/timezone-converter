@@ -1,11 +1,12 @@
 <template>
+
   <div class="container mx-auto p-4 max-w-[100vw] overflow-x-hidden lg:flex lg:gap-8 lg:items-start bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
   <!-- Content Section -->
   <div class="lg:text-left sm:text-center lg:w-1/2">
     <!-- User Timezone Selection -->
     <div class="mb-8">
       <label class="block mb-2 font-bold text-2xl lg:pt-[50px] md:mt-[60px]">Your Timezone</label>
-      <select v-model="userTimezone" class="select select-bordered h-[40px] text-black">
+      <select v-model="userTimezone" class="select select-bordered h-[40px] bg-gray-700 text-white">
         <option v-for="tz in timezones" :key="tz" :value="tz">{{ tz }}</option>
       </select>
     </div>
@@ -18,7 +19,7 @@
         :key="index"
         class="flex gap-4 lg:mb-6 mb-2 lg:w-[380px] lg:h-[40px] md:h-[40px] lg:ml-[5px] md:ml-[200px] sm:ml-[180px]"
       >
-        <select v-model="member.timezone" class="select select-bordered flex-1 text-black">
+        <select v-model="member.timezone" class="select select-bordered flex-1  bg-gray-700 text-white">
           <option v-for="tz in timezones" :key="tz" :value="tz">
             {{ tz }}
           </option>

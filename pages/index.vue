@@ -1,3 +1,8 @@
+<script setup lang="ts">
+
+
+</script>
+
 <template>
   <div class="bg-white dark:bg-[#000000c7]">
     <main>
@@ -11,7 +16,7 @@
                 ref="herotext"
               >
                 <span class="text-orange-400">TIMEZONE </span>
-                <span class="text-dodgeroll-gold">CONVERTER</span>
+                <span class="text-white">CONVERTER</span>
               </h1>
               <p class="text-[19px] lg:text-xl mb-5 text-white" ref="subtext">
                 The End of 'What Time Works for You?' Instant Perfect Meeting
@@ -53,6 +58,7 @@
       </section>
     </main>
   </div>
+  
   <About />
   <hr />
   <Newsletter />
