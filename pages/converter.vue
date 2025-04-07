@@ -1,5 +1,7 @@
 <template>
-
+  <div class="">
+      <WorldClock />
+    </div>
   <div class="container mx-auto p-4 max-w-[100vw] overflow-x-hidden lg:flex lg:gap-8 lg:items-start bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
   <!-- Content Section -->
   <div class="lg:text-left sm:text-center lg:w-1/2">
