@@ -5,7 +5,7 @@
     <!-- User Timezone Selection -->
     <div class="mb-8">
       <label class="block mb-2 font-bold text-2xl lg:pt-[50px] md:mt-[60px]">Your Timezone</label>
-      <select v-model="userTimezone" class="select select-bordered text-black">
+      <select v-model="userTimezone" class="select select-bordered h-[40px] text-black">
         <option v-for="tz in timezones" :key="tz" :value="tz">{{ tz }}</option>
       </select>
     </div>
@@ -16,7 +16,7 @@
       <div
         v-for="(member, index) in teamMembers"
         :key="index"
-        class="flex gap-4 lg:mb-6 mb-2 lg:w-[380px] lg:h-[40px] md:h-[40px] lg:ml-[10px] md:ml-[200px] sm:ml-[180px]"
+        class="flex gap-4 lg:mb-6 mb-2 lg:w-[380px] lg:h-[40px] md:h-[40px] lg:ml-[5px] md:ml-[200px] sm:ml-[180px]"
       >
         <select v-model="member.timezone" class="select select-bordered flex-1 text-black">
           <option v-for="tz in timezones" :key="tz" :value="tz">
@@ -79,7 +79,7 @@
       <input
         type="datetime-local"
         v-model="meetingTime"
-        class="input input-bordered text-black"
+        class="input input-bordered text-black h-[40px]"
       />
     </div>
 
