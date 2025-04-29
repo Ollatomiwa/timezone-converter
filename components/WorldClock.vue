@@ -64,7 +64,7 @@
     { city: 'London', timezone: 'Europe/London', emoji: '🇬🇧' },
     { city: 'Lagos', timezone: 'Africa/Lagos', emoji: '🇳🇬' },
     { city: 'Tokyo', timezone: 'Asia/Tokyo', emoji: '🇯🇵' },
-    { city: 'Sydney', timezone: 'Australia/Sydney', emoji: '🇦🇺' }
+    
   ]
   
   const clocks = ref([...presetClocks])
@@ -120,7 +120,7 @@
       America: '🇺🇸',
       Europe: '🇪🇺',
       Asia: '🇦🇸',
-      Africa: '🌐',
+      Africa: '🌍',
       Australia: '🇦🇺',
       Pacific: '🇵🇼'
     }
