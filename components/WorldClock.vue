@@ -62,7 +62,7 @@
   const presetClocks = [
     { city: 'New York', timezone: 'America/New_York', emoji: '🇺🇸' },
     { city: 'London', timezone: 'Europe/London', emoji: '🇬🇧' },
-    { city: 'Lagos', timezone: 'Africa/Lagos', emoji: '🇦🇴' },
+    { city: 'Lagos', timezone: 'Africa/Lagos', emoji: '🇳🇬' },
     { city: 'Tokyo', timezone: 'Asia/Tokyo', emoji: '🇯🇵' },
     { city: 'Sydney', timezone: 'Australia/Sydney', emoji: '🇦🇺' }
   ]
@@ -120,7 +120,7 @@
       America: '🇺🇸',
       Europe: '🇪🇺',
       Asia: '🇦🇸',
-      Africa: '🇦🇴',
+      Africa: '🌐',
       Australia: '🇦🇺',
       Pacific: '🇵🇼'
     }
