@@ -87,19 +87,19 @@
     </div>
 
     <!-- Results Display -->
-    <div v-if="meetingTime" class="bg-gray-600 p-4 rounded-lg lg:max-w-[50vw] min-w-[40px] lg:ml-[1px] md:ml-[90px]">
+    <div v-if="meetingTime" class="bg-gray-600 p-4 rounded-lg lg:max-w-[50vw] min-w-[90px] lg:ml-[1px] md:ml-[90px]">
       <div class="mb-4">
         <pre class="bg-base-100 p-1 rounded text-white lg:text-[20px] text-[10px]">{{ messageContent }}</pre>
       </div>
       <div class="flex justify-center gap-2">
-        <button @click="copyMessage" class="btn rounded-lg w-[120px] h-[50px] bg-blue-600 text-white">Copy Message</button>
-        <button @click="shareMessage" class="btn rounded-lg w-[110px] h-[50px] bg-blue-600 text-white">
+        <button @click="copyMessage" class="btn rounded-lg w-[120px] h-[50px] bg-blue-600 text-white text-[15px]">Copy Message</button>
+        <button @click="shareMessage" class="btn rounded-lg w-[110px] h-[50px] bg-blue-600 text-white text-[15px]">
           Share
         </button>
-        <button @click="downloadICS" class="btn rounded-lg w-[160px] h-[50px] bg-green-600 text-white">
+        <button @click="downloadICS" class="btn rounded-lg w-[190px] h-[50px] text-[15px] bg-green-600 text-white">
         Download ICS
     </button>
-    <button @click="openGoogleCalendar" class="btn rounded-lg w-[220px] h-[50px] bg-red-600 text-white">
+    <button @click="openGoogleCalendar" class="btn rounded-lg w-[240px] h-[50px] text-[15px] bg-red-600 text-white">
   Add to Google Calendar
 </button>
       </div>
@@ -237,5 +237,35 @@ const formatInTimeZone = (date, tz, formatStr) => {
   });
 
   window.open(`${base}?${params.toString()}`, "_blank");
+};
+
+//ICS file
+const downloadICS = () => {
+  const date = new Date(meetingTime.value);
+  const endDate = new Date(date.getTime() + 60 * 60 * 1000); // +1 hour
+
+  const formatICSDate = (d) =>
+    d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+  const content = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "BEGIN:VEVENT",
+    `SUMMARY:${eventPurpose.value || "Meeting"}`,
+    `LOCATION:${locationPurpose.value || ""}`,
+    `DTSTART:${formatICSDate(date)}`,
+    `DTEND:${formatICSDate(endDate)}`,
+    `DESCRIPTION:Meeting with team\n\n${messageContent.value}`,
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ].join("\n");
+
+  const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "meeting.ics";
+  a.click();
+  URL.revokeObjectURL(url);
 };
 </script>
