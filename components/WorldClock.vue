@@ -20,7 +20,7 @@
             class="text-gray-400 hover:text-white p-1"
             aria-label="Remove clock"
           >
-            <Icon name="mdi:close" size="16" />
+            <Icon name="mdi:close" size="24" />
           </button>
         </div>
       </div>

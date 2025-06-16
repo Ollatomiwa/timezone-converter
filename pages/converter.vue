@@ -96,8 +96,12 @@
         <button @click="shareMessage" class="btn rounded-lg w-[110px] h-[50px] bg-blue-600 text-white">
           Share
         </button>
+        <button @click="downloadICS" class="btn rounded-lg w-[160px] h-[50px] bg-green-600 text-white">
+        Download ICS
+    </button>
       </div>
     </div>
+    <IcsPage/>
   </div>
 
   <!-- Images Section -->
@@ -118,6 +122,7 @@
 <script setup>
 import { useClipboard } from "@vueuse/core";
 import * as dateFnsTz from "date-fns-tz";
+import IcsPage from "./icsPage.vue";
 
 const { toZonedTime, format } = dateFnsTz;
 
