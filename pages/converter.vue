@@ -99,9 +99,11 @@
         <button @click="downloadICS" class="btn rounded-lg w-[160px] h-[50px] bg-green-600 text-white">
         Download ICS
     </button>
+    <button @click="openGoogleCalendar" class="btn rounded-lg w-[220px] h-[50px] bg-red-600 text-white">
+  Add to Google Calendar
+</button>
       </div>
     </div>
-    <IcsPage/>
   </div>
 
   <!-- Images Section -->
@@ -122,7 +124,7 @@
 <script setup>
 import { useClipboard } from "@vueuse/core";
 import * as dateFnsTz from "date-fns-tz";
-import IcsPage from "./icsPage.vue";
+
 
 const { toZonedTime, format } = dateFnsTz;
 
@@ -215,5 +217,25 @@ const shareMessage = async () => {
 const formatInTimeZone = (date, tz, formatStr) => {
   const zonedDate = toZonedTime(date, tz);
   return format(zonedDate, formatStr, { timeZone: tz });
+};
+
+  //Google Calendar link
+  const openGoogleCalendar = () => {
+  const date = new Date(meetingTime.value);
+  const endDate = new Date(date.getTime() + 60 * 60 * 1000); // 1hr later
+
+  const formatForGoogle = (d) =>
+    d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+
+  const base = "https://calendar.google.com/calendar/render";
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: eventPurpose.value || "Meeting",
+    location: locationPurpose.value || "",
+    details: messageContent.value,
+    dates: `${formatForGoogle(date)}/${formatForGoogle(endDate)}`,
+  });
+
+  window.open(`${base}?${params.toString()}`, "_blank");
 };
 </script>
